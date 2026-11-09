@@ -6,7 +6,7 @@ Follow [this guide](START_HERE.html) if you want a more detailed walk-through of
 
 ## Files for the session
 
-- [nora_uq_workshop.Rproj](nora_uq_workshop.Rproj) — start by loading the RStudio project.
+- [nora_uq_workshop.Rproj](https://htmlpreview.github.io/?https://github.com/Camiling/NORA-UQ-workshop/blob/main/START_HERE.html) — start by loading the RStudio project.
 - [00_setup.R](00_setup.R) — run this to set up R.
 - [01_intervals.R](01_intervals.R) — open and edit this for Exercise 1: prediction intervals.
 - [03_calibration_demo.R](03_calibration_demo.R) — we'll run this calibration demonstration together.
