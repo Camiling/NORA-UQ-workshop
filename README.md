@@ -12,6 +12,7 @@ Follow [this guide](https://htmlpreview.github.io/?https://github.com/Camiling/N
 - [03_calibration_demo.R](03_calibration_demo.R) — we'll run this calibration demonstration together.
 - [02_refits.R](02_refits.R) — open and edit this for Exercise 2: ensemble SD.
 - [solutions/](solutions/) — folder with fully worked scripts for both exercises.
+- [Slides_NORA_UQ.pdf](Slides_NORA_UQ.pdf) — the slides from the session.
 
 ## Optional exploration
 
