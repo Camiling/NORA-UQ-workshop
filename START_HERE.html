@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How sure is your house-price model? · NORA-Tech UQ</title><style>
+:root{--ink:#203d49;--muted:#536e79;--green:#2d7a59;--blue:#2676a8;--line:#d8e8e2;--mint:#e9f7ee;--sky:#eaf4fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fcfefd;color:var(--ink);font:17px/1.55 Arial,sans-serif}main{max-width:920px;margin:auto;padding:44px 40px 60px}header{border-top:7px solid #9ed3ba;padding:24px 0 18px;border-bottom:1px solid var(--line)}.label{margin:0 0 12px;color:var(--green);font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase}h1{font-size:42px;line-height:1.12;letter-spacing:-1px;margin:0 0 14px}header p:last-child{margin-bottom:0}.sub,.meta{color:var(--muted)}nav{display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid var(--line);font-size:15px}a{color:var(--blue);text-underline-offset:3px}h2{font-size:27px;line-height:1.2;color:var(--green);margin:36px 0 14px}h3{font-size:20px;line-height:1.3;margin:22px 0 8px}p{margin:12px 0}ul,ol{padding-left:24px;margin:12px 0}li{margin:7px 0}code{font:0.87em/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:14px 0;padding:15px 18px;background:var(--sky);border-left:3px solid #8fc6e0}pre code{font-size:15px}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}caption{text-align:left;font-weight:bold;margin-bottom:8px}th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}th{background:var(--sky);font-weight:700}.schedule td:first-child{white-space:nowrap}.takeaway{border-left:4px solid var(--green);padding:5px 18px;margin:22px 0;background:var(--mint)}footer{border-top:1px solid var(--line);padding-top:16px;margin-top:34px;font-size:14px;color:var(--muted)}.time{font-size:15px;color:var(--muted);margin-top:-6px}
+@media(max-width:620px){main{padding:24px 18px 40px}h1{font-size:33px}h2{font-size:24px}table{font-size:14px}th,td{padding:8px 6px}.schedule td:first-child{white-space:normal}nav{gap:8px 18px}}
+@media print{body{font-size:10.5pt;color:#203d49;background:white}main{max-width:none;padding:0}header{border-top-width:4px;padding-top:12px}h1{font-size:25pt}h2{font-size:17pt;margin-top:22px}h3{font-size:13pt}nav{display:none}p,li{margin-top:5px;margin-bottom:5px}pre{padding:9px 12px;break-inside:avoid}pre code{font-size:9pt}table{font-size:9pt}th,td{padding:6px 8px}h2,h3{break-after:avoid}tr{break-inside:avoid}a{color:inherit;text-decoration:none}footer{margin-top:20px;font-size:9pt}}
+</style></head>
+<body><main><header><p class="label">NORA-Tech · Participant guide</p><h1>How sure is your house-price model?</h1><p class="sub">A hands-on uncertainty workshop with Camilla Lingjærde.</p></header><nav aria-label="Sections"><a href="#setup">Setup</a><a href="#first">Exercise 1</a><a href="#calibration">Calibration</a><a href="#second">Exercise 2</a><a href="#followup">Follow-up</a></nav>
+<section id="setup"><h2>Getting started</h2>
+<ol><li>Get the workshop files from <a href="https://github.com/Camiling/NORA-UQ-workshop">GitHub</a>. Keep the folder structure.</li><li>Open <a href="nora_uq_workshop.Rproj">nora_uq_workshop.Rproj</a> in RStudio, then run <a href="00_setup.R">00_setup.R</a>. Use R 4.2 or newer.</li></ol>
+<p>The exercises use included predictions and run offline with base R. Choose whether to fill the marked lines or run the worked solutions. Both routes ask you to interpret the results.</p></section>
+<section id="questions"><h2>What are we measuring?</h2>
+<table><thead><tr><th scope="col">Summary</th><th scope="col">Question</th></tr></thead><tbody><tr><td>Prediction interval</td><td>What could a future house sale price be?</td></tr><tr><td>Ensemble SD</td><td>How sensitive is the fitted median to the sampled training data?</td></tr></tbody></table></section>
+<section id="first"><h2>Exercise 1: prediction intervals</h2><p class="time">Slides 14–16 · 17 minutes in pairs</p>
+<p>Open <a href="01_intervals.R">01_intervals.R</a>, or run the complete solution:</p>
+<pre><code>source("solutions/01_intervals_solution.R")</code></pre>
+<ul><li>Predict what “90% coverage” should mean.</li><li>Calculate coverage and mean interval width for all 586 test houses.</li><li>Inspect the plot. How useful are these ranges for a buyer?</li></ul>
+<p><strong>Bring back:</strong> both numbers, one finding and one question.</p>
+<p><strong>Coverage:</strong> the fraction of observed prices inside their intervals. <strong>Width:</strong> the upper endpoint minus the lower endpoint.</p></section>
+<section id="calibration"><h2>Calibration demonstration</h2><p class="time">Slides 17–19</p>
+<p>Predict whether the intervals will widen or narrow. Camilla will run <a href="03_calibration_demo.R">03_calibration_demo.R</a>; you can follow along. The adjustment uses reserved calibration sales, then evaluation uses test sales.</p>
+<p>Conformal calibration targets overall coverage under exchangeability of calibration and future cases. Subgroups and changed markets need separate checks.</p></section>
+<section id="second"><h2>Exercise 2: ensemble SD</h2><p class="time">Slides 23–25 · 17 minutes in pairs</p>
+<p>Open <a href="02_refits.R">02_refits.R</a>, or run the complete solution:</p>
+<pre><code>source("solutions/02_refits_solution.R")</code></pre>
+<ul><li>Compare refits using 300 and 1,500 sampled training rows.</li><li>Summarize the house-specific SDs and count houses with lower SD at 1,500 rows.</li><li>Discuss what the fits could all miss together.</li></ul>
+<p>Each SD describes 20 whole-forest median predictions for the same house. Rows are resampled with replacement from one training pool.</p>
+<p><strong>Bring back:</strong> the two median SDs, the fraction with lower SD, one finding and one question.</p></section>
+<section id="followup"><h2>Optional exploration</h2>
+<ul><li><a href="04_model_assumptions.R">04_model_assumptions.R</a>: explore slide 29 using a Bayesian model. Change the sample size, assumed noise or model shape. All code is supplied.</li></ul>
+<div class="takeaway"><p>Different UQ summaries answer different questions. An explicit aleatoric–epistemic split requires modelling assumptions.</p></div>
+<p>For your own research: which summary would help, what would it tell you, and what would you check?</p></section>
+<footer>File overview: <a href="README.md">README.md</a> · Data and methods: <a href="REFERENCES.txt">REFERENCES.txt</a></footer></main></body></html>
