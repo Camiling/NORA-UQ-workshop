@@ -11,7 +11,7 @@
 <p>The exercises use included predictions and run offline with base R. Choose whether to fill the marked lines or run the worked solutions. Both routes ask you to interpret the results.</p></section>
 <section id="questions"><h2>What are we measuring?</h2>
 <table><thead><tr><th scope="col">Summary</th><th scope="col">Question</th></tr></thead><tbody><tr><td>Prediction interval</td><td>What could a future house sale price be?</td></tr><tr><td>Ensemble SD</td><td>How sensitive is the fitted median to the sampled training data?</td></tr></tbody></table></section>
-<section id="first"><h2>Exercise 1: prediction intervals</h2><p class="time">Slides 14–16 · 17 minutes in pairs</p>
+<section id="first"><h2>Exercise 1: prediction intervals</h2><p class="time">Slides 14–16 · 20 minutes in pairs</p>
 <p>Open <a href="01_intervals.R">01_intervals.R</a>, or run the complete solution:</p>
 <pre><code>source("solutions/01_intervals_solution.R")</code></pre>
 <ul><li>Predict what “90% coverage” should mean.</li><li>Calculate coverage and mean interval width for all 586 test houses.</li><li>Inspect the plot. How useful are these ranges for a buyer?</li></ul>
@@ -20,7 +20,7 @@
 <section id="calibration"><h2>Calibration demonstration</h2><p class="time">Slides 17–19</p>
 <p>Predict whether the intervals will widen or narrow. Camilla will run <a href="03_calibration_demo.R">03_calibration_demo.R</a>; you can follow along. The adjustment uses reserved calibration sales, then evaluation uses test sales.</p>
 <p>Conformal calibration targets overall coverage under exchangeability of calibration and future cases. Subgroups and changed markets need separate checks.</p></section>
-<section id="second"><h2>Exercise 2: ensemble SD</h2><p class="time">Slides 23–25 · 17 minutes in pairs</p>
+<section id="second"><h2>Exercise 2: ensemble SD</h2><p class="time">Slides 23–25 · 20 minutes in pairs</p>
 <p>Open <a href="02_refits.R">02_refits.R</a>, or run the complete solution:</p>
 <pre><code>source("solutions/02_refits_solution.R")</code></pre>
 <ul><li>Compare refits using 300 and 1,500 sampled training rows.</li><li>Summarize the house-specific SDs and count houses with lower SD at 1,500 rows.</li><li>Discuss what the fits could all miss together.</li></ul>
