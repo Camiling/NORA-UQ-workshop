@@ -2,7 +2,7 @@
 
 ## Guide
 
-Follow [this guide] if you want a more detailed walk-through of the setup and exercises.
+Follow [this guide](https://htmlpreview.github.io/?https://github.com/Camiling/NORA-UQ-workshop/blob/main/START_HERE.html) if you want a more detailed walk-through of the setup and exercises.
 
 ## Files for the session
 
