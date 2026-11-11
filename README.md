@@ -23,3 +23,5 @@ Follow [this guide](https://htmlpreview.github.io/?https://github.com/Camiling/N
 - [R/helpers.R](R/helpers.R) — shared functions.
 - [data/](data/) — Ames housing data.
 - [cache/](cache/) — included predictions.
+- [05_generate_reference](05_generate_reference.R) — code for generating the reference results used in workshop.
+ 
